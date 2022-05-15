@@ -204,6 +204,7 @@ class MetasploitModule < Msf::Auxiliary
   end
 
   def getadvertisement
+    sleep(1)
     pkt = capture.next
     Kernel.select(nil,nil,nil,0.1)
     return if not pkt
