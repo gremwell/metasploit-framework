@@ -204,14 +204,13 @@ class MetasploitModule < Msf::Auxiliary
   end
 
   def getadvertisement
-    sleep(1)
     pkt = capture.next
     Kernel.select(nil,nil,nil,0.1)
     return if not pkt
     p = PacketFu::Packet.parse(pkt)
     return unless p.is_ipv6?
     return unless p.ipv6_next == 0x3a
-    return unless p.payload[0,2] == "\x88\x00"
+    return unless p.icmpv6_type == 136
     p
   end
 end
