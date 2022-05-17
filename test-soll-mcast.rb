@@ -18,7 +18,8 @@ def fixed_ipv6_soll_mcast_addr6(addr)
   'ff02::1:' + [m[0,3].join, m[3,2].join].join(':')
 end
 
-def test(unicast, expected)
+def test(descr, unicast, expected)
+  puts "--- " + descr
   puts "unicast:  " + unicast
   puts "orig:     " + orig_ipv6_soll_mcast_addr6(unicast)
   puts "fixed:    " + fixed_ipv6_soll_mcast_addr6(unicast)
@@ -26,5 +27,5 @@ def test(unicast, expected)
 end
 
 # from https://en.wikipedia.org/wiki/Solicited-node_multicast_address
-test("fe80::2aa:ff:fe28:9c5a", "ff02::1:ff28:9c5a")
-
+test("wiki", "fe80::2aa:ff:fe28:9c5a", "ff02::1:ff28:9c5a")
+test("h12", "fe80::200:ff:fe00:3", "ff02::1:ff00:3")
