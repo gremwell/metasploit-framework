@@ -24,13 +24,19 @@ Due to time limitations [here](https://github.com/rapid7/metasploit-framework/bl
 ```
 
 - Choose auxiliary scanner 
-   ```use ipv6_neighbor.rb```
+```bash
+use ipv6_neighbor.rb
+```
 
 - Set ipv4 range
-    ```set rhosts 10.0.0.1-6```
+```bash
+set rhosts 10.0.0.1-6
+```
 
 - Run module
-   ```run or exploit```
+```bash
+run or exploit
+```
 
 ## Current behavior
 ```
