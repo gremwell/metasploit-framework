@@ -24,13 +24,19 @@ Due to improper filtering in ipv6_neighbor.rb [line #213](https://github.com/rap
 ```
 
 - Choose auxiliary scanner 
-  ```use ipv6_neighbor.rb```
+```bash
+use ipv6_neighbor.rb
+```
 
 - Set ipv4 range
-    ```set rhosts 10.0.0.1-5```
+```bash
+set rhosts 10.0.0.1-5
+```
 
 - Run module
-   ```run or exploit```
+```bash
+run or exploit
+```
 
 ## Current behavior
 ```
