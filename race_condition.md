@@ -13,7 +13,7 @@ ipv6_neighbor.rb scanner used for scanning set of ipv4 host ranges via ARP reque
 
 ## Problem
 
-Due to time limitations [here](https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/discovery/ipv6_neighbor.rb#L77). Last arp response of last host, for example which is ```10.0.0.6``` wont be catched and outputted as **Alive host**.
+ARP scanning routing does not seem to wait long enough for ARP response to arrive, at least for host(s) from the end of the target range for small ranges.
 
 ## Steps to reproduce issue
 
