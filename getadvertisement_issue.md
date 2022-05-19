@@ -9,11 +9,16 @@
 -->
 ## Overview
 
-ipv6_neighbor.rb scanner used for scanning set of ipv4 host ranges via ARP requests, getting their mac addresses, comparing them with mac addresses which were obtained from NS and NA responses of NDP, for further ipv4 to ipv6 mappings.
+ipv6_neighbor.rb scanner does the following:
+
+* scans set of ipv4 host ranges via ARP requests
+* uses identified MAC addresses to calculate link-local IPv6 addresses
+* uses NDP to confirm the calculated link-local address is live
+* mapping ipv4 to calculated link-local ipv6 addresses
 
 ## Problem
 
-Due to improper filtering in ipv6_neighbor.rb [line #213](https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/discovery/ipv6_neighbor.rb#L213), payload returns nothing unless it will be ``` p.payload[0,2] == "\x88\x00"```,  but the actual payload, that is coming from [function](https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/discovery/ipv6_neighbor.rb#L206) is ```\x00\x00\x00\xFE\x80\x00\x00\x00\x00```. Thereby, ```getadvertisement``` doesnt return anything, and ipv4 to ipv6 mappings wont work, because expected values will not be passed to [adv variable](https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/discovery/ipv6_neighbor.rb#L129) and next functionality will not have anything to compare and map.
+getadvertisement function (ipv6_neighbor.rb [line #213](https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/discovery/ipv6_neighbor.rb#L213)) returns nothing unless packet payload starts with "\x88\x00", probably referring to the payload of IPv6 packet which carries header of ICMPv6. but the actual value of p.payload at this point is  ```\x00\x00\x00\xFE\x80\x00\x00\x00\x00``` - the payload of ICMPv6 protocol. Thereby, getadvertisement function fails to detect NA responses.
 
 ## Steps to reproduce issue
 
