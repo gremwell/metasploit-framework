@@ -9,7 +9,12 @@
 -->
 ## Overview
 
-ipv6_neighbor.rb scanner used for scanning set of ipv4 host ranges via ARP requests, getting their mac addresses, comparing them with mac addresses which were obtained from NS and NA responses of NDP, for further ipv4 to ipv6 mappings.
+ipv6_neighbor.rb scanner does the following:
+
+* scans set of ipv4 host ranges via ARP requests
+* uses identified MAC addresses to calculate link-local IPv6 addresses
+* uses NDP to confirm the calculated link-local address is live
+* mapping ipv4 to calculated link-local ipv6 addresses
 
 ## Problem
 
