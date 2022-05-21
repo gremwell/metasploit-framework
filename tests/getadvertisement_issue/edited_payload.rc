@@ -1,0 +1,3 @@
+use auxiliary/scanner/discovery/adv_edited_payload.rb
+set rhosts 10.0.0.1-6
+run
