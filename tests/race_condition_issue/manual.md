@@ -10,7 +10,7 @@ Tests:
 
 ## Test for time_original_payload.rb
    1. Copy ```time_original_payload.rb``` to preferrable location. Example location: ```/opt/metasploit-framework/embedded/framework/modules/auxiliary/scanner/discovery/race_condition/```
-   2. Copy ```original_payload.rc``` to the same location.
+   2. Copy ```original_payload.rc``` to the same location as ```time_original_payload.rb```
    3. Check, that [line](https://github.com/gremwell/metasploit-framework/blob/issues_template/tests/race_condition_issue/original_payload.rc#L1) have correct path to ```time_original_payload.rb```
    4. Run test: ```resource original_payload.rc```
 
@@ -26,7 +26,7 @@ Tests:
 
 ## Test for time_edited_payload.rb
    1. Copy ```time_edited_payload.rb``` to preferrable location. Example location: ```/opt/metasploit-framework/embedded/framework/modules/auxiliary/scanner/discovery/race_condition/```
-   2. Copy ```edited_payload.rc``` to the same location.
+   2. Copy ```edited_payload.rc``` to the same location as ```time_edited_payload.rb```
    3. Check, that [line](https://github.com/gremwell/metasploit-framework/blob/issues_template/tests/race_condition_issue/edited_payload.rc#L1) have correct path to ```time_edited_payload.rb```
    4. Run test: ```resource edited_payload.rc```
  
