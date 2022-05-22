@@ -13,7 +13,8 @@ Tests:
    
    3. Copy ```original_payload.rc``` to the same location as ```adv_original_payload.rb```
    4. Check, that [line](https://github.com/gremwell/metasploit-framework/blob/issues_template/tests/getadvertisement_issue/original_payload.rc#L1) have correct path to ```adv_original_payload.rb```
-   5. Run test: ```resource original_payload.rc```
+   5. Run ```reload_all``` after adding new modules/test
+   6. Run test: ```resource original_payload.rc```
 
 ## Expected behavior of testing original_payload.rb
 ```
@@ -30,7 +31,8 @@ Tests:
    
    3. Copy ```edited_payload.rc``` to the same location as ```adv_edited_payload.rb```
    4. Check, that [line](https://github.com/gremwell/metasploit-framework/blob/issues_template/tests/getadvertisement_issue/edited_payload.rc#L1) have correct path to ```adv_edited_payload.rb```
-   5. Run test: ```resource edited_payload.rc```
+   5. Run ```reload_all``` after adding new modules/test
+   6. Run test: ```resource edited_payload.rc```
  
 ## Expected behavior of testing edited_payload.rb
 ```
